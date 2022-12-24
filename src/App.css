@@ -1,0 +1,242 @@
+.App {
+  text-align: center;
+  width: 85vw;
+  margin: 0 auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+liste{
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom:20px ;
+  color: rgb(0, 0, 0);
+}
+ul, a{
+  list-style: none;
+  margin-bottom:20px ;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+nav{
+  color: rgb(255, 255, 255);
+}
+.buttonconnect{
+  background-color: whitesmoke;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  border-color: #61dafb;
+}
+button{
+  font-size: 20px;
+  border-radius: 10px;
+  border-color: #61dafb;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: whitesmoke;
+}
+
+input{
+  font-size: 20px;
+  border-radius: 10px;
+  border-color: #61dafb;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: whitesmoke;
+  margin-right: 5px;
+}
+
+.fake{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  border-color: #61dafb;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  text-align: center;
+  
+}
+.fake img{
+  width: 50%;
+  height: 50%;
+  border-radius: 40%;
+  margin-bottom: 10px;
+}
+.fake ul{
+  padding-left: 0px;
+}
+
+.info{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+.menu-button:checked ~ .hamburger-line.first {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-button:checked ~ .hamburger-line.third {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (min-width: 500px) {
+  .menu-button-wrapper {
+    display: all;
+  }
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.hamburger {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.hamburger:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: #2669f5;
+  transform: rotate(0deg);
+  transition: all 0.4s cubic-bezier(0.54, -0.10, 0.57, 0.57);
+}
+
+.hamburger-input {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  width: 100%;
+  background: #fff;
+  height: 2px;
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  position: relative;
+}
+
+.hamburger-line.first,
+.hamburger-line.third {
+  width: 50%;
+}
+
+.hamburger-line.third {
+  margin-left: 50%;
+  transform-origin: left;
+}
+
+.menu-button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-button-wrapper .item-list {
+  position: absolute;
+  top: 90px;
+  transform: translateX(-50%) scale(0);
+  transform-origin: center;
+  transition: all 0.4s cubic-bezier(0.54, -0.10, 0.57, 0.57);
+  background-color: #2669f5;
+  color: #fff;
+  width: 200px;
+  left: 50%;
+  padding: 15px 0;
+  text-align: left;
+  border-radius: 100px;
+  font-weight: 300;
+  opacity: 0;
+  user-select: none;
+}
+
+.menu-button-wrapper .item-list div {
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.menu-button {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.menu-button:checked ~ .item-list {
+  transform: translateX(-50%) scale(1);
+  border-radius: 20px;
+  opacity: 1;
+}
+
+.menu-button:checked ~ .item-list div {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.menu-button:checked ~ .hamburger:before {
+  transform: rotate(225deg);
+  background: #2669f5;
+}
